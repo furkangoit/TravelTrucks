@@ -1,38 +1,54 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const initialState = {
+  items: []
+};
+
 const favoritesSlice = createSlice({
   name: 'favorites',
-  initialState: {
-    items: JSON.parse(localStorage.getItem('favorites')) || [],
-  },
+  initialState,
   reducers: {
-    addToFavorites: (state, action) => {
-      const item = action.payload;
-      const exists = state.items.find(fav => fav.id === item.id);
-      if (!exists) {
-        state.items.push(item);
-        localStorage.setItem('favorites', JSON.stringify(state.items));
+    // Başlatma sırasında localStorage'dan yükle
+    loadFavoritesFromStorage: (state) => {
+      try {
+        const stored = localStorage.getItem('traveltrucks_favorites');
+        if (stored) {
+          state.items = JSON.parse(stored);
+        }
+      } catch (error) {
+        console.error('Error loading favorites:', error);
+        state.items = [];
       }
     },
-    removeFromFavorites: (state, action) => {
-      state.items = state.items.filter(item => item.id !== action.payload);
-      localStorage.setItem('favorites', JSON.stringify(state.items));
-    },
+    // Favoriye ekle
     toggleFavorite: (state, action) => {
-      const item = action.payload;
-      const exists = state.items.find(fav => fav.id === item.id);
-      if (exists) {
-        state.items = state.items.filter(fav => fav.id !== item.id);
+      const camper = action.payload;
+      const index = state.items.findIndex(fav => fav.id === camper.id);
+      
+      if (index >= 0) {
+        // Favorilerden çıkar
+        state.items.splice(index, 1);
       } else {
-        state.items.push(item);
+        // Favorilere ekle
+        state.items.push({
+          id: camper.id,
+          name: camper.name,
+          price: camper.price,
+          location: camper.location,
+          image: camper.gallery?.[0] || ''
+        });
       }
-      localStorage.setItem('favorites', JSON.stringify(state.items));
+      
+      // localStorage'a kaydet
+      localStorage.setItem('traveltrucks_favorites', JSON.stringify(state.items));
     },
-    isFavorite: (state, action) => {
-      return state.items.some(item => item.id === action.payload);
-    },
-  },
+    // Favorileri temizle
+    clearFavorites: (state) => {
+      state.items = [];
+      localStorage.removeItem('traveltrucks_favorites');
+    }
+  }
 });
 
-export const { addToFavorites, removeFromFavorites, toggleFavorite } = favoritesSlice.actions;
+export const { loadFavoritesFromStorage, toggleFavorite, clearFavorites } = favoritesSlice.actions;
 export default favoritesSlice.reducer;

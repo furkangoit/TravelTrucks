@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const MOCK_CAMPERS = [
+  // MAVERICKS - Kyiv, Ukraine
   {
     id: '1',
     name: 'Mavericks',
@@ -29,13 +30,14 @@ const MOCK_CAMPERS = [
     tank: '132 l',
     consumption: '12.40 l/100km'
   },
+  // KUGA CAMPER - Odessa, Ukraine
   {
     id: '2',
     name: 'Kuga Camper',
     price: 8000,
     rating: 4.2,
     reviewsCount: 10,
-    location: 'Kyiv, Ukraine',
+    location: 'Odessa, Ukraine',
     description: 'The Kuga Camper combines comfort and adventure.',
     gallery: ['/images/7.png', '/images/2.png', '/images/3.png', '/images/1.png'],
     transmission: 'Automatic',
@@ -57,13 +59,14 @@ const MOCK_CAMPERS = [
     tank: '100 l',
     consumption: '10.5 l/100km'
   },
+  // ROAD BEAR - Lviv, Ukraine
   {
     id: '3',
     name: 'Road Bear C 23-25',
     price: 8000,
     rating: 4.1,
     reviewsCount: 1,
-    location: 'Kyiv, Ukraine',
+    location: 'Lviv, Ukraine',
     description: 'Experience the ultimate road trip with the Road Bear.',
     gallery: ['/images/6.png', '/images/2.png', '/images/3.png', '/images/1.png'],
     transmission: 'Automatic',
@@ -85,13 +88,14 @@ const MOCK_CAMPERS = [
     tank: '150 l',
     consumption: '14.2 l/100km'
   },
+  // MIGHTY CLASS C - Dnipro, Ukraine
   {
     id: '4',
     name: 'Mighty Class C Medium',
     price: 8000,
     rating: 4.0,
     reviewsCount: 1,
-    location: 'Kyiv, Ukraine',
+    location: 'Dnipro, Ukraine',
     description: 'The Mighty Class C offers luxury camping experience.',
     gallery: ['/images/5.png', '/images/2.png', '/images/3.png', '/images/1.png'],
     transmission: 'Automatic',
@@ -112,6 +116,180 @@ const MOCK_CAMPERS = [
     height: '3.1 m',
     tank: '140 l',
     consumption: '13.5 l/100km'
+  },
+  // EXPLORER PLUS - Kharkiv, Ukraine
+  {
+    id: '5',
+    name: 'Explorer Plus',
+    price: 7500,
+    rating: 4.3,
+    reviewsCount: 5,
+    location: 'Kharkiv, Ukraine',
+    description: 'Compact yet comfortable for couples and solo travelers.',
+    gallery: ['/images/4.png', '/images/2.png', '/images/3.png', '/images/1.png'],
+    transmission: 'Manual',
+    engine: 'Diesel',
+    kitchen: true,
+    ac: false,
+    radio: true,
+    automatic: false,
+    tv: false,
+    bathroom: true,
+    refrigerator: true,
+    microwave: false,
+    gas: true,
+    water: true,
+    form: 'Van',
+    length: '5.2 m',
+    width: '1.95 m',
+    height: '2.0 m',
+    tank: '120 l',
+    consumption: '11.2 l/100km'
+  },
+  // DREAM CAMPER - Poltava, Ukraine
+  {
+    id: '6',
+    name: 'Dream Camper',
+    price: 9000,
+    rating: 4.7,
+    reviewsCount: 8,
+    location: 'Poltava, Ukraine',
+    description: 'Luxury camping with all modern amenities.',
+    gallery: ['/images/5.png', '/images/2.png', '/images/3.png', '/images/1.png'],
+    transmission: 'Automatic',
+    engine: 'Diesel',
+    kitchen: true,
+    ac: true,
+    radio: true,
+    automatic: true,
+    tv: true,
+    bathroom: true,
+    refrigerator: true,
+    microwave: true,
+    gas: true,
+    water: true,
+    form: 'Fully Integrated',
+    length: '7.5 m',
+    width: '2.3 m',
+    height: '3.3 m',
+    tank: '160 l',
+    consumption: '13.8 l/100km'
+  },
+  // ADVENTURE VAN - Sumy, Ukraine
+  {
+    id: '7',
+    name: 'Adventure Van',
+    price: 7800,
+    rating: 4.4,
+    reviewsCount: 6,
+    location: 'Sumy, Ukraine',
+    description: 'Perfect for adventurers and nature lovers.',
+    gallery: ['/images/6.png', '/images/2.png', '/images/3.png', '/images/1.png'],
+    transmission: 'Automatic',
+    engine: 'Petrol',
+    kitchen: true,
+    ac: true,
+    radio: true,
+    automatic: true,
+    tv: false,
+    bathroom: true,
+    refrigerator: true,
+    microwave: false,
+    gas: true,
+    water: true,
+    form: 'Van',
+    length: '6.0 m',
+    width: '2.1 m',
+    height: '2.3 m',
+    tank: '130 l',
+    consumption: '11.8 l/100km'
+  },
+  // FAMILY CRUISER - Zaporizhzhia, Ukraine
+  {
+    id: '8',
+    name: 'Family Cruiser',
+    price: 8500,
+    rating: 4.6,
+    reviewsCount: 4,
+    location: 'Zaporizhzhia, Ukraine',
+    description: 'Spacious interior perfect for families.',
+    gallery: ['/images/7.png', '/images/2.png', '/images/3.png', '/images/1.png'],
+    transmission: 'Automatic',
+    engine: 'Petrol',
+    kitchen: true,
+    ac: true,
+    radio: true,
+    automatic: true,
+    tv: true,
+    bathroom: true,
+    refrigerator: true,
+    microwave: true,
+    gas: true,
+    water: true,
+    form: 'Fully Integrated',
+    length: '7.2 m',
+    width: '2.25 m',
+    height: '3.0 m',
+    tank: '145 l',
+    consumption: '12.5 l/100km'
+  },
+  // SUNSET EXPLORER - Chernihiv, Ukraine
+  {
+    id: '9',
+    name: 'Sunset Explorer',
+    price: 8200,
+    rating: 4.5,
+    reviewsCount: 3,
+    location: 'Chernihiv, Ukraine',
+    description: 'Modern design with premium comfort features.',
+    gallery: ['/images/4.png', '/images/2.png', '/images/3.png', '/images/1.png'],
+    transmission: 'Automatic',
+    engine: 'Diesel',
+    kitchen: true,
+    ac: true,
+    radio: true,
+    automatic: true,
+    tv: true,
+    bathroom: true,
+    refrigerator: true,
+    microwave: true,
+    gas: true,
+    water: true,
+    form: 'Alcove',
+    length: '6.8 m',
+    width: '2.15 m',
+    height: '2.9 m',
+    tank: '135 l',
+    consumption: '12.1 l/100km'
+  },
+  // NOMAD LIFE - Vinnytsia, Ukraine
+  {
+    id: '10',
+    name: 'Nomad Life',
+    price: 7600,
+    rating: 4.2,
+    reviewsCount: 7,
+    location: 'Vinnytsia, Ukraine',
+    description: 'Lightweight and easy to handle for minimalists.',
+    gallery: ['/images/1.png', '/images/2.png', '/images/3.png', '/images/4.png'],
+    transmission: 'Manual',
+    engine: 'Petrol',
+    kitchen: true,
+    ac: false,
+    radio: false,
+    automatic: false,
+    tv: false,
+    bathroom: true,
+    refrigerator: false,
+    microwave: false,
+    gas: true,
+    water: true,
+    form: 'Van',
+    length: '5.0 m',
+    width: '1.9 m',
+    height: '1.95 m',
+    tank: '110 l',
+    consumption: '10.5 l/100km'
   }
 ];
 
@@ -120,17 +298,17 @@ export const fetchCampers = createAsyncThunk(
   async (filters) => {
     let filtered = MOCK_CAMPERS;
 
-    if (filters.location) {
+    if (filters && filters.location && filters.location.trim() !== '') {
       filtered = filtered.filter(c => 
         c.location.toLowerCase().includes(filters.location.toLowerCase())
       );
     }
 
-    if (filters.type) {
+    if (filters && filters.type && filters.type.trim() !== '') {
       filtered = filtered.filter(c => c.form === filters.type);
     }
 
-    if (filters.features) {
+    if (filters && filters.features) {
       Object.keys(filters.features).forEach(key => {
         if (filters.features[key]) {
           filtered = filtered.filter(c => c[key] === true);
@@ -145,7 +323,11 @@ export const fetchCampers = createAsyncThunk(
 export const fetchCamperById = createAsyncThunk(
   'campers/fetchCamperById',
   async (id) => {
-    return MOCK_CAMPERS.find(camper => camper.id === id);
+    const camper = MOCK_CAMPERS.find(camper => camper.id === id);
+    if (!camper) {
+      throw new Error(`Camper with id ${id} not found`);
+    }
+    return camper;
   }
 );
 
@@ -173,6 +355,7 @@ const campersSlice = createSlice({
       .addCase(fetchCampers.fulfilled, (state, action) => {
         state.loading = false;
         state.list = Array.isArray(action.payload) ? action.payload : [];
+        state.error = null;
       })
       .addCase(fetchCampers.rejected, (state, action) => {
         state.loading = false;
@@ -185,10 +368,12 @@ const campersSlice = createSlice({
       .addCase(fetchCamperById.fulfilled, (state, action) => {
         state.loading = false;
         state.selectedCamper = action.payload;
+        state.error = null;
       })
       .addCase(fetchCamperById.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
+        state.selectedCamper = null;
       });
   }
 });
